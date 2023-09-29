@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Fecha {
     private String dia;
-    private Date horario;
+    private String horario;
 
-    public Fecha(String dia,Date horario){
+    public Fecha(String dia, String horario){
         this.dia = dia;
         this.horario = horario;
     }
@@ -19,11 +19,11 @@ public class Fecha {
         this.dia = dia;
     }
 
-    public Date getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 }

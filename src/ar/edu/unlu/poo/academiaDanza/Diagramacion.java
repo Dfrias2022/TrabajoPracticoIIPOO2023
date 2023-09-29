@@ -17,6 +17,10 @@ public class Diagramacion {
 
     }
 
+    public void agregarFecha(Fecha fecha){
+        diaHora.add(fecha);
+    }
+
     public Nivel getNivel() {
         return nivel;
     }
