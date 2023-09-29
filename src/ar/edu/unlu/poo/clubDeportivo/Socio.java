@@ -1,22 +1,22 @@
 package ar.edu.unlu.poo.clubDeportivo;
 
-import org.w3c.dom.ls.LSOutput;
-
-public class Socios {
+public class Socio {
     private int nroSocio;
     private String nombre;
     private String apellido;
     private String email;
     private String direccion;
     private int telefono;
+    private Suscripcion suscripcion;
 
-    public Socios(int nroSocio,String nombre,String apellido,String email,String direccion, int telefono){
+    public Socio(int nroSocio, String nombre, String apellido, String email, String direccion, int telefono, Suscripcion suscripcion){
         this.nroSocio = nroSocio;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.suscripcion = suscripcion;
     }
 
     public int getNroSocio() {
@@ -43,6 +43,10 @@ public class Socios {
         return telefono;
     }
 
+    public Suscripcion getSuscripcion(){
+        return suscripcion;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -61,5 +65,9 @@ public class Socios {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public void setSuscripcion(Suscripcion suscripcion){
+        this.suscripcion = suscripcion;
     }
 }
