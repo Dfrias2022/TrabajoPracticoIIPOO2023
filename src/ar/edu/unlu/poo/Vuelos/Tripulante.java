@@ -1,10 +1,10 @@
 package ar.edu.unlu.poo.Vuelos;
 
-public class Tripulante extends Persona{
+public class Tripulante implements Rol{
     private String cargo;
 
-    public Tripulante(String nombre,String telefono,String direccion,String cargo){
-        super(nombre,telefono,direccion);
+    public Tripulante(String cargo){
+       // super(nombre,telefono,direccion);
         this.cargo = cargo;
     }
 
@@ -14,5 +14,10 @@ public class Tripulante extends Persona{
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    @Override
+    public String obtenerRolPersona() {
+        return "Tripulante - cargo " + cargo;
     }
 }

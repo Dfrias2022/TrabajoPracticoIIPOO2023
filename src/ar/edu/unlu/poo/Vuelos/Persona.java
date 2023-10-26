@@ -4,11 +4,21 @@ public class Persona {
     private String nombre;
     private String telefono;
     private String direcccion;
+    private Rol rol;
 
-    public Persona(String nombre,String telefono,String direccion){
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+
+    public Persona(String nombre, String telefono, String direccion){
         this.nombre = nombre;
         this.telefono = telefono;
         this.direcccion = direccion;
+        this.rol = null;
     }
 
     public String getNombre() {
