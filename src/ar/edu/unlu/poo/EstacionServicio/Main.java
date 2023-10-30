@@ -1,12 +1,13 @@
 package ar.edu.unlu.poo.EstacionServicio;
-
+import java.util.Collections;
+import java.util.Comparator;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        List<Cliente> listaTop5 = new ArrayList<>();
+        List<Cliente> listaTop10 = new ArrayList<>();
         List<Venta>listaVentas = new ArrayList<>();
         Empleado e1 = new Empleado("frias","diego","1111","5454");
         Empleado e2 = new Empleado("frias","diego","1111","5454");
@@ -26,9 +27,9 @@ public class Main {
         Cliente cl2 = new Cliente("002","alguien2");
         Cliente cl3 = new Cliente("003","alguien3");
 
-        listaTop5.add(cl1);
-        listaTop5.add(cl2);
-        listaTop5.add(cl3);
+        listaTop10.add(cl1);
+        listaTop10.add(cl2);
+        listaTop10.add(cl3);
 
         Venta v1 = new Venta(cl1,ex1,e1, LocalDate.now(),5.500);
         Venta v2 = new Venta(cl2,ex1,e1, LocalDate.now(),5.500);
@@ -48,6 +49,16 @@ public class Main {
         for(Venta v:listaVentas){
             System.out.printf("Cliente: %s Expendedor: %s Combustible: %s Empleado: %s Importe: %.2f \n",v.getCliente().getPatente(),v.getExpendedor().getCodigo(),v.getExpendedor().getCombustible().getNombre(),v.getEmpleado().getNombre(),v.getImporteTotal());
 
+        }
+
+        //ORDENO LA LISTA DE VENTAS POR MEDIO DEL CAMPO IMPORTE TOTAL PARA TENER A LOS PRIMEROS 5
+        Collections.sort(listaVentas, Comparator.comparing(Venta::getImporteTotal));
+        for (int i=1;i>5;i++){
+            listaTop10.add(listaVentas.get(i).getCliente());
+        }
+
+        for(Cliente c:listaTop10){
+            System.out.printf("Cliente: %s Gastos");
         }
 
     }
