@@ -10,6 +10,7 @@ public class Main {
         List<Proveedor> listaProveedores = new ArrayList<>();
 
         ProveedorTransporte t1 = new ProveedorTransporte(1200.00,"pepe",200);
+        System.out.println(t1.getImporteBase());
         ProveedorHospedaje h1 = new ProveedorHospedaje(1200.00,"juan",200,100);
         ProveedorGuia g1 = new ProveedorGuia(1200.00,"jorge",200);
 
@@ -45,7 +46,7 @@ public class Main {
 
 
         for(Compra c:listaVentas){
-            System.out.printf("Cliente: %s Destino: %s \n",c.getCliente().getNombre(),c.getPaquete().getDestino());
+            System.out.printf("Cliente: %s Destino: %s Costo: %f\n",c.getCliente().getNombre(),c.getPaquete().getDestino(),c.getPaquete().getCosto());
         }
 
 
